@@ -35,3 +35,60 @@ class IEventBroker(Interface):
         """
         Returns an event bus on which IEvents are published.
         """
+
+
+class IPresentationAgent(IEventBroker):
+    """
+    A class representing an application abstraction.
+    """
+
+
+class IControlAgent(Interface):
+    """
+    Control Agent interface
+    """
+
+    def is_readonly():
+        """
+        Returns component's read only state flag
+        """
+
+    def set_readonly(flag):
+        """
+        Sets component's read only state flag
+        """
+
+    def set_presentation_agent(presentation_agent):
+        """
+        Sets presentation agent instance
+        """
+
+    def get_presentation_agent():
+        """
+        Sets presentation agent instance
+        """
+
+    def set_abstraction_agent(presentation_agent):
+        """
+        Sets abstraction agent instance
+        """
+
+    def get_abstraction_agent():
+        """
+        Sets abstraction agent instance
+        """
+
+    def get_value(name):
+        """
+        Returns attribute value identified by name
+        """
+
+    def set_value(name, value):
+        """
+        Sets attribute value identified by name
+        """
+
+    def destroy():
+        """
+        Cleanly destroyes all components
+        """
